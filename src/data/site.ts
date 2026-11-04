@@ -129,9 +129,9 @@ export const serviceGroups = [
 export const team = [
   {
     name: 'Brijesh Patel',
-    title: '[TODO: job title]',
+    title: 'Shareholder',
     quals: 'URA-registered tax agent',
-    bio: '[TODO: two or three line bio from the CV]',
+    bio: 'Brijesh Patel is a shareholder of Reva Associates Limited and oversees client engagements and quotes.',
     photo: '',
   },
 ];
