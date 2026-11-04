@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import Field from '../components/Field.astro';
+import { serviceGroups, site } from '../data/site';
+---
+
+<Base title="Services" description="Tax, accounting, payroll, audit and company services in Uganda.">
+  <section class="page-intro">
+    <div class="wrap">
+      <p class="eyebrow">Services</p>
+      <h1>How we can help</h1>
+      <p class="lead">Tax, accounting, audit and company support, in one place.</p>
+      <p style="margin-top: 12px"><Field v="[TODO: confirm which services below the firm offers]" /></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      {serviceGroups.map((group) => (
+        <div class="service-group">
+          <h2>{group.title}</h2>
+          <ul class="service-list">
+            {group.items.map((item) => (
+              <li>
+                <h3>{item.name}</h3>
+                <p>{item.text}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap band-row">
+      <div>
+        <h2>Not sure what you need?</h2>
+        <p><Field v={site.pricing} /></p>
+      </div>
+      <a class="button" href="/contact/">Ask for a quote</a>
+    </div>
+  </section>
+</Base>

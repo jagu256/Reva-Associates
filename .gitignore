@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.env*
+.DS_Store
+
+# Filled-in questionnaires and raw client material stay out of the repo
+*.docx
+
+# Local tool settings
+.claude/

@@ -1,0 +1,101 @@
+---
+import Field from './Field.astro';
+import { isTodo, serviceGroups, site } from '../data/site';
+
+const configured = !isTodo(site.web3formsKey);
+const thanksUrl = new URL('/thanks/', Astro.site).href;
+---
+
+<form class="contact-form" action="https://api.web3forms.com/submit" method="POST" data-configured={configured}>
+  <input type="hidden" name="access_key" value={configured ? site.web3formsKey : ''} />
+  <input type="hidden" name="subject" value={`New website enquiry for ${site.shortName}`} />
+  <input type="hidden" name="from_name" value={`${site.shortName} website`} />
+  <input type="hidden" name="redirect" value={thanksUrl} />
+  <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <div class="field-row">
+    <div class="field">
+      <label for="name">Your name</label>
+      <input id="name" name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="field">
+      <label for="phone">Phone <span>(optional)</span></label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" />
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" required />
+  </div>
+
+  <div class="field">
+    <label for="service">What do you need help with?</label>
+    <select id="service" name="service">
+      <option value="">Choose a service (optional)</option>
+      {serviceGroups.map((group) => (
+        <optgroup label={group.title}>
+          {group.items.map((item) => <option>{item.name}</option>)}
+        </optgroup>
+      ))}
+      <option>Something else</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+  </div>
+
+  <p class="form-note">Please don't include TINs, passwords or bank details here. We'll ask for documents once we've spoken.</p>
+
+  {!configured && <p><Field v={site.web3formsKey} /></p>}
+
+  <button class="button" type="submit">Send enquiry</button>
+  <p class="form-status" role="status" aria-live="polite" hidden></p>
+</form>
+
+<script>
+  // Without JavaScript the form still posts normally and lands on /thanks/.
+  const form = document.querySelector<HTMLFormElement>('.contact-form')!;
+  const status = form.querySelector<HTMLElement>('.form-status')!;
+  const button = form.querySelector<HTMLButtonElement>('button')!;
+
+  const show = (message: string, kind: 'ok' | 'error') => {
+    status.textContent = message;
+    status.dataset.kind = kind;
+    status.hidden = false;
+  };
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (form.dataset.configured !== 'true') {
+      show('The form is not connected yet. Add the Web3Forms key in src/data/site.ts.', 'error');
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(form));
+    delete data.redirect;
+
+    button.disabled = true;
+    button.textContent = 'Sending…';
+    status.hidden = true;
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error(`Status ${response.status}`);
+      form.reset();
+      show("Thank you. Your enquiry has been sent and we'll get back to you soon.", 'ok');
+    } catch {
+      show('Sorry, your message could not be sent. Please try again, or call or email us directly.', 'error');
+    } finally {
+      button.disabled = false;
+      button.textContent = 'Send enquiry';
+    }
+  });
+</script>

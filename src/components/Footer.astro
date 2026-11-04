@@ -1,0 +1,27 @@
+---
+import Field from './Field.astro';
+import { isTodo, nav, site } from '../data/site';
+
+const { contact } = site;
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-name">{site.name}</p>
+      <p>{site.description}</p>
+      <p>ICPAU: <Field v={site.icpau} /></p>
+    </div>
+    <nav aria-label="Footer">
+      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+    <address>
+      <p><Field v={contact.address} /></p>
+      <p>{isTodo(contact.phone) ? <Field v={contact.phone} /> : <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a>}</p>
+      <p>{isTodo(contact.email) ? <Field v={contact.email} /> : <a href={`mailto:${contact.email}`}>{contact.email}</a>}</p>
+    </address>
+  </div>
+  <div class="wrap footer-base">
+    <p>&copy; {new Date().getFullYear()} {site.name}</p>
+  </div>
+</footer>

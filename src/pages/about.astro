@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import Field from '../components/Field.astro';
+import { site } from '../data/site';
+
+const facts = [
+  ['Founded', site.founded],
+  ['ICPAU registration', site.icpau],
+  ['Team experience', site.experience],
+  ['Clients served', site.clients],
+  ['Team size', site.staff],
+  ['Memberships', site.memberships],
+];
+---
+
+<Base title="About" description={`About ${site.name}, an accounting and tax firm in Uganda.`}>
+  <section class="page-intro">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h1>About {site.shortName}</h1>
+      <p class="lead"><Field v={site.summary} /></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <h2>Our story</h2>
+        <p style="margin-top: 14px"><Field v={site.story} /></p>
+      </div>
+      <dl class="facts" aria-label="The firm at a glance">
+        {facts.map(([label, value]) => (
+          <div>
+            <dt>{label}</dt>
+            <dd><Field v={value} /></dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+</Base>

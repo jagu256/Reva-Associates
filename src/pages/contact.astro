@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Field from '../components/Field.astro';
+import { isTodo, site } from '../data/site';
+
+const { contact } = site;
+const whatsappText = encodeURIComponent(`Hello ${site.shortName}, I'd like to ask about your services.`);
+---
+
+<Base title="Contact" description={`Contact ${site.name} for accounting, tax and audit support.`}>
+  <section class="page-intro">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1>Talk to us</h1>
+      <p class="lead">Send us a message and we'll get back to you.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap contact-grid">
+      <ContactForm />
+
+      <aside class="contact-aside">
+        <dl class="facts">
+          <div>
+            <dt>Office</dt>
+            <dd><Field v={contact.address} /></dd>
+          </div>
+          <div>
+            <dt>Phone</dt>
+            <dd>{isTodo(contact.phone) ? <Field v={contact.phone} /> : <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a>}</dd>
+          </div>
+          <div>
+            <dt>Email</dt>
+            <dd>{isTodo(contact.email) ? <Field v={contact.email} /> : <a href={`mailto:${contact.email}`}>{contact.email}</a>}</dd>
+          </div>
+          <div>
+            <dt>Hours</dt>
+            <dd><Field v={contact.hours} /></dd>
+          </div>
+        </dl>
+
+        {isTodo(contact.whatsapp) ? (
+          <p style="margin-top: 20px"><Field v={contact.whatsapp} /></p>
+        ) : (
+          <a class="button" href={`https://wa.me/${contact.whatsapp}?text=${whatsappText}`}>Message us on WhatsApp</a>
+        )}
+      </aside>
+    </div>
+  </section>
+</Base>

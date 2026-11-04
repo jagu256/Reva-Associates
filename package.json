@@ -1,0 +1,19 @@
+{
+  "name": "reva-associates-website",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "node scripts/list-todos.mjs --check && astro build",
+    "preview": "astro preview",
+    "todos": "node scripts/list-todos.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/source-serif-4": "^5.3.1",
+    "astro": "^7.4.5"
+  },
+  "devDependencies": {
+    "wrangler": "^4.157.0"
+  }
+}

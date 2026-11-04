@@ -1,0 +1,7 @@
+---
+import { isTodo } from '../data/site';
+
+const { v } = Astro.props;
+---
+
+{isTodo(v) ? <mark class="todo">{v}</mark> : v}
