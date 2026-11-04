@@ -36,7 +36,7 @@ export const site = {
     // Digits only with country code, no + or spaces. Used for the one-tap link.
     whatsapp: '256757868120',
     email: 'accounts1@revaassociates.co.ug',
-    hours: 'Mon–Fri 8:30am–5:30pm',
+    hours: 'Mon–Fri 8:30 AM to 5:30 PM',
   },
 
   // Free key from web3forms.com, sent to the enquiries inbox.
