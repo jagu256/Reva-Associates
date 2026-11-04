@@ -30,11 +30,11 @@ export const site = {
   registration: '[TODO: confirm what the registration number is and whether to show it, or remove this row]',
 
   contact: {
-    address: '[TODO: building, floor or plot, street, area, city]',
-    phone: '[TODO: main phone number]',
+    address: 'Plot 03, Wampewo Avenue, Kololo, Kampala, Uganda. P.O. Box 34708',
+    phone: '+256 757 868120',
     // Digits only with country code, no + or spaces. Used for the one-tap link.
     whatsapp: '[TODO: WhatsApp number, digits only with 256 country code]',
-    email: '[TODO: enquiries email address]',
+    email: 'accounts1@revaassociates.co.ug',
     hours: 'Mon–Fri 8:30am–5:30pm',
   },
 

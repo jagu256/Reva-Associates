@@ -59,7 +59,7 @@ The firm already uses `revaassociates.co.ug`, but the registry lists Mai Hosting
 
 1. Ask for the registrant and contacts to be changed to Reva Associates Ltd.
 2. Get the control panel login, or the authorisation code to transfer it to another registrar.
-3. Find out whether anyone uses an `@revaassociates.co.ug` email address, and keep it running during the move.
+3. The firm uses `accounts1@revaassociates.co.ug` on its letterhead, so find out where that mailbox is hosted and who controls it. Keep it running during the move, because changing the nameservers can stop email if the mail records aren't copied across.
 
 ## 5. Connect the domain and HTTPS
 
