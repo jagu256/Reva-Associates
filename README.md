@@ -23,7 +23,6 @@ The dev server runs at http://localhost:4321.
 - `src/data/site.ts`: all firm details, services and team members. Most edits happen here.
 - `src/pages/`: one file per page.
 - `src/styles/global.css`: colours and fonts are at the top in `:root`.
-- `public/team/`: team photos.
 - `PUBLISHING.md`: how to deploy and connect the domain.
 
 To publish a change, commit and push to `main`. Cloudflare rebuilds the site automatically.

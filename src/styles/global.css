@@ -501,28 +501,21 @@ mark.todo {
   gap: 32px;
 }
 
-.person-photo {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 3px;
-  object-fit: cover;
-}
-
-.person-photo-empty {
-  display: grid;
-  place-items: center;
-  background: #f1eeec;
-  color: var(--muted);
-  font-size: 0.9375rem;
+.person {
+  padding-top: 16px;
+  border-top: 1px solid var(--ink);
 }
 
 .person h2 {
-  margin-top: 16px;
   font-size: 1.3125rem;
 }
 
 .person p {
   margin-top: 6px;
+}
+
+.person-role {
+  color: var(--muted);
 }
 
 /* Contact */
@@ -720,20 +713,6 @@ mark.todo {
 
   .stats-row {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .team-solo {
-    display: block;
-  }
-
-  .team-solo .person {
-    display: grid;
-    grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
-    gap: 40px;
-  }
-
-  .team-solo .person h2 {
-    margin-top: 0;
   }
 
   .footer-grid {

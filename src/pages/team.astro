@@ -1,6 +1,5 @@
 ---
 import Base from '../layouts/Base.astro';
-import Field from '../components/Field.astro';
 import { site, team } from '../data/site';
 ---
 
@@ -13,20 +12,12 @@ import { site, team } from '../data/site';
   </section>
 
   <section class="section">
-    <div class:list={['wrap', 'team-grid', { 'team-solo': team.length === 1 }]}>
+    <div class="wrap team-grid">
       {team.map((person) => (
         <article class="person">
-          {person.photo ? (
-            <img class="person-photo" src={person.photo} alt={person.name} loading="lazy" />
-          ) : (
-            <div class="person-photo person-photo-empty"><Field v="[TODO: photo]" /></div>
-          )}
-          <div>
-            <h2><Field v={person.name} /></h2>
-            <p><Field v={person.title} /></p>
-            <p><Field v={person.quals} /></p>
-            <p><Field v={person.bio} /></p>
-          </div>
+          <h2>{person.name}</h2>
+          <p class="person-role">{person.title} · {person.quals}</p>
+          <p>{person.bio}</p>
         </article>
       ))}
     </div>

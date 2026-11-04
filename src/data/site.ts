@@ -125,13 +125,11 @@ export const serviceGroups = [
   },
 ];
 
-// Add a photo by putting the file in public/team/ and setting photo: '/team/name.jpg'.
 export const team = [
   {
     name: 'Brijesh Patel',
     title: 'Shareholder',
     quals: 'URA-registered tax agent',
     bio: 'Brijesh Patel is a shareholder of Reva Associates Limited and oversees client engagements and quotes.',
-    photo: '',
   },
 ];
