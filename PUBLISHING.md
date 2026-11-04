@@ -41,6 +41,8 @@ git push
 
 ## 3. Deploy to Cloudflare
 
+**The host isn't decided yet.** These steps are for Cloudflare, but any static host works: use `npm run build` as the build command and `dist` as the output folder. `wrangler.jsonc`, the `wrangler` package and the `.workers.dev` link are Cloudflare-only, so remove them if you choose another host. GitHub Pages is the exception: its terms don't allow running an online business on it.
+
 1. Create a free account at [cloudflare.com](https://dash.cloudflare.com/sign-up). Use an email address the firm will keep, because this account will end up controlling the live site.
 2. Go to **Compute > Workers & Pages > Create application** and import your GitHub repository.
 3. Set:
