@@ -100,9 +100,14 @@ git push
 
 ### Before launch, your dad should check
 
+- **ICPAU licensing (do this first):** the Accountants Act makes it an offence to practise accountancy without a certificate of practice, and ICPAU treats bookkeeping, tax compliance and advisory work as accountancy. Check the firm's position on ICPAU's register or with ICPAU, and take legal advice, before publishing a site that advertises these services.
+- **PDPO registration:** the 2021 Regulations require data collectors to register with the Personal Data Protection Office, and registration lasts one year. Confirm or complete this before the form goes live.
+- **Tax agent registration:** tax agent registration renews each year, so update the site if the number or status changes.
+- **Privacy promises:** the Privacy Notice says enquiries are deleted after 12 months if the person doesn't become a client. The firm must actually do this, or change the period.
+- **Legal review:** have a Ugandan advocate review the Privacy Notice and Terms of Use. They were drafted without a lawyer.
+- **Name and logo:** consider registering the name and logo as trade marks with URSB.
 - **Accuracy:** that every claim on the site is correct, including the tax agent status, client numbers and years of experience.
-- **Client names:** that each named client is happy to be listed.
-- **Data protection:** the form collects personal details, so check what Uganda's Data Protection and Privacy Act 2019 requires, such as registering with the Personal Data Protection Office and adding a short privacy notice. I haven't added a privacy page.
+- **Client names:** get each named client's permission in writing.
 
 ### After launch
 

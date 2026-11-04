@@ -15,12 +15,13 @@ export const site = {
   name: 'Reva Associates Limited',
   shortName: 'Reva Associates',
   slogan: 'The Accounting Solutions',
+  legalUpdated: '4 November 2026',
 
   // Shown as the page description in search results, so it stays plain text.
   description: 'Accounting, tax and URA audit support for businesses in Uganda.',
 
   summary:
-    'Reva Associates Limited is a Ugandan accounting and tax firm, started in 2022. We help small and medium businesses stay compliant and resolve URA customs and tax audits, objections and disputes.',
+    'Reva Associates Limited is a Ugandan accounting and tax firm, started in 2022. We help small and medium businesses with their compliance and support them through URA customs and tax audits, objections and disputes.',
   story:
     'Reva Associates was started in 2022, building on more than 25 years of accounting and tax experience. We have served more than 100 clients, from importers and manufacturers to NGOs, hotels and construction companies.',
   founded: '2022',
@@ -98,16 +99,16 @@ export const serviceGroups = [
     title: 'Tax',
     items: [
       { name: 'Individual income tax returns', text: 'Preparing and filing personal returns with URA.' },
-      { name: 'Company tax returns & compliance', text: 'Corporate returns, provisional tax and keeping filings on schedule.' },
-      { name: 'VAT registration & returns', text: 'Registering for VAT and filing accurate returns.' },
+      { name: 'Company tax returns & compliance', text: 'Corporate returns, provisional tax and help staying on top of filing dates.' },
+      { name: 'VAT registration & returns', text: 'Registering for VAT and preparing and filing returns.' },
       { name: 'EFRIS setup & support', text: 'Getting set up on EFRIS and keeping invoicing running smoothly.' },
-      { name: 'Tax advisory & planning', text: 'Structuring decisions so tax is planned for, not a surprise.' },
+      { name: 'Tax advisory & planning', text: 'Helping you plan ahead for the tax effects of business decisions.' },
     ],
   },
   {
     title: 'Accounting & payroll',
     items: [
-      { name: 'Bookkeeping & accounting', text: 'Keeping your records accurate and up to date.' },
+      { name: 'Bookkeeping & accounting', text: 'Keeping your records organised and up to date.' },
       { name: 'Financial statements preparation', text: 'Clear, well-prepared annual accounts.' },
       { name: 'Management report preparation', text: 'Regular reports that show how the business is doing.' },
       { name: 'Internal audits', text: 'Reviewing controls and processes to reduce risk.' },

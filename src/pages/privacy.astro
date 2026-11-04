@@ -1,0 +1,80 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+
+const { contact } = site;
+---
+
+<Base title="Privacy Notice" description={`How ${site.name} handles personal data collected through this website.`}>
+  <section class="page-intro">
+    <div class="wrap">
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Notice</h1>
+      <p class="lead">How we handle the personal data you give us through this website, in line with Uganda's Data Protection and Privacy Act.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap legal">
+      <p class="legal-date">Last updated {site.legalUpdated}</p>
+
+      <h2>Who is responsible for your data</h2>
+      <p>{site.name} is responsible for the personal data collected through this website.</p>
+      <p>{contact.address}<br />
+        Email: <a href={`mailto:${contact.email}`}>{contact.email}</a><br />
+        Phone: <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></p>
+
+      <h2>What we collect</h2>
+      <p>When you use our contact form, we collect your name, email address and message, along with your phone number, the service you're interested in and your preferred appointment date and time if you give them.</p>
+      <p>If you contact us by email, phone or WhatsApp, we collect your contact details and whatever you choose to tell us.</p>
+      <p>Please don't send TINs, passwords, bank details or other sensitive information through the form.</p>
+
+      <h2>Why we need it</h2>
+      <p>We use your details only to reply to your enquiry, prepare a quote and arrange any appointment you ask for. We won't use them for marketing unless you have agreed to that separately.</p>
+
+      <h2>Do you have to give it?</h2>
+      <p>No law requires you to give us this information, and it's your choice. We need your name, email address and message to reply through the form, and we can't respond to your enquiry without them. Everything else on the form is optional.</p>
+
+      <h2>Who receives it</h2>
+      <ul>
+        <li>Our own team, to deal with your enquiry.</li>
+        <li><a href="https://web3forms.com" rel="noopener">Web3Forms</a>, which delivers form messages to our inbox.</li>
+        <li>The companies that provide our email and website hosting.</li>
+        <li>WhatsApp, if you choose to message us there. WhatsApp's own terms and privacy policy apply.</li>
+        <li>Authorities or professional advisers, where the law requires it or we need it to protect our legal rights.</li>
+      </ul>
+      <p>We don't sell your personal data.</p>
+
+      <h2>Storage outside Uganda</h2>
+      <p>Some of these service providers store or process data outside Uganda. By ticking the consent box on our form, you agree to this. If you'd rather not, please call us or visit our office instead.</p>
+
+      <h2>How long we keep it</h2>
+      <p>If you don't become a client, we keep your enquiry for up to 12 months and then delete it. If you become a client, we keep your information for as long as needed to provide our services and to meet our legal and professional record-keeping duties.</p>
+
+      <h2>Your rights</h2>
+      <p>Under the Data Protection and Privacy Act, you can:</p>
+      <ul>
+        <li>ask whether we hold personal data about you, and for a description of it;</li>
+        <li>ask who has had access to it;</li>
+        <li>ask us to correct or update it;</li>
+        <li>ask us to stop processing it where that causes, or is likely to cause, you harm or distress;</li>
+        <li>ask us to stop using it for direct marketing;</li>
+        <li>withdraw your consent, although this doesn't affect anything we did before you withdrew it.</li>
+      </ul>
+      <p>To use these rights, contact us using the details above. We may need to confirm your identity first.</p>
+      <p>You can also complain to Uganda's Personal Data Protection Office.</p>
+
+      <h2>Security</h2>
+      <p>We take reasonable technical and organisational steps to protect your data, but no website or email service is completely secure. If we believe your data has been accessed by someone unauthorised, we will notify the Personal Data Protection Office as the law requires.</p>
+
+      <h2>Cookies and tracking</h2>
+      <p>This website doesn't use cookies for advertising or analytics, and it doesn't track you. Our hosting provider may keep basic technical logs, such as IP addresses, for security.</p>
+
+      <h2>Children</h2>
+      <p>Our services are for businesses and adults. If you're under 18, please ask a parent or guardian to contact us for you.</p>
+
+      <h2>Changes to this notice</h2>
+      <p>We may update this notice. The date at the top shows when it last changed.</p>
+    </div>
+  </section>
+</Base>

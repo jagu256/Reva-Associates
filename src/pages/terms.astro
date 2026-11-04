@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+
+const { contact } = site;
+---
+
+<Base title="Terms of Use" description={`Terms for using the ${site.name} website.`}>
+  <section class="page-intro">
+    <div class="wrap">
+      <p class="eyebrow">Legal</p>
+      <h1>Terms of Use</h1>
+      <p class="lead">By using this website, you agree to these terms. If you don't agree, please don't use it.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap legal">
+      <p class="legal-date">Last updated {site.legalUpdated}</p>
+
+      <h2>About this website</h2>
+      <p>This website is run by {site.name}, {contact.address}.</p>
+
+      <h2>General information only</h2>
+      <p>The content on this website is general information about our services. It isn't accounting, tax, legal or financial advice, and it doesn't take your circumstances into account. Tax law and URA practice change, so the content may not always be current. Please get advice specific to your situation before acting on anything here.</p>
+
+      <h2>No client relationship</h2>
+      <p>Using this website, sending us an enquiry or requesting an appointment doesn't make you our client. We become responsible for work only when we have accepted you as a client and agreed the scope and fees in writing. We may decline any enquiry or engagement.</p>
+
+      <h2>Quotes and fees</h2>
+      <p>Nothing on this website is an offer or a fixed price. A quote applies only when we give it to you in writing for your specific work.</p>
+
+      <h2>No guaranteed results</h2>
+      <p>Each matter depends on its own facts and on the decisions of URA and other authorities. We can't guarantee the outcome of any audit, objection, dispute, application or filing. Figures on this website describe our past experience and don't predict future results.</p>
+
+      <h2>Independence from government</h2>
+      <p>{site.name} is a private firm. We aren't part of, or endorsed by, the Uganda Revenue Authority, the Uganda Registration Services Bureau, the National Social Security Fund or any other government body. Tax agent registration doesn't mean URA endorses our services. Please use official government websites and channels for official information, forms and payments.</p>
+
+      <h2>Client names</h2>
+      <p>Client names are shown as examples of businesses we have worked with. They belong to their owners, and showing them doesn't mean those businesses endorse this website or are responsible for its content.</p>
+
+      <h2>Accuracy and availability</h2>
+      <p>We try to keep this website accurate and available, but we provide it "as is" and don't promise that it will always be complete, current, secure or free of errors.</p>
+
+      <h2>Limit of liability</h2>
+      <p>To the fullest extent the law allows, {site.name} and its shareholders, directors and staff aren't liable for any loss or damage arising from your use of this website or your reliance on its content. Nothing in these terms limits any liability that can't legally be limited. Separate terms apply to work we do for clients.</p>
+
+      <h2>Our content</h2>
+      <p>The content, logo and design of this website belong to {site.name} or are used with permission. You may view it and print it for your own reference. You may not copy, reuse or publish it, or use our name or logo, without our written permission.</p>
+
+      <h2>Acceptable use</h2>
+      <p>You must not misuse this website, including by trying to gain unauthorised access, interfering with how it works, sending spam or false enquiries through the form, or impersonating anyone.</p>
+
+      <h2>Links to other websites</h2>
+      <p>Links to other services, such as WhatsApp, are provided for convenience. We don't control those services and aren't responsible for them.</p>
+
+      <h2>Your data</h2>
+      <p>Our <a href="/privacy/">Privacy Notice</a> explains how we handle personal data.</p>
+
+      <h2>Governing law</h2>
+      <p>These terms are governed by the laws of Uganda, and the courts of Uganda have jurisdiction over any dispute about them.</p>
+
+      <h2>Changes to these terms</h2>
+      <p>We may update these terms. The date at the top shows when they last changed.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about these terms can be sent to <a href={`mailto:${contact.email}`}>{contact.email}</a>.</p>
+    </div>
+  </section>
+</Base>

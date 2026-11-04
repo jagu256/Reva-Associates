@@ -17,6 +17,7 @@ The dev server runs at http://localhost:4321.
 | `npm run dev` | Local preview that updates as you edit |
 | `npm run build` | Builds the site into `dist/` |
 | `npm run todos` | Lists every placeholder still to fill in |
+| `npm run preview-file` | Creates `Reva-Website-Preview.html`, a single file you can double-click to view the site |
 
 ## Where things are
 

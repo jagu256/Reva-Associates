@@ -60,9 +60,16 @@ const thanksUrl = new URL('/thanks/', Astro.site).href;
 
   <p class="form-note">We're open {site.contact.hours}. We'll confirm any appointment by phone or email.</p>
 
+  <p class="form-note">We need your name, email and message to reply. Everything else is optional.</p>
+
   <p class="form-note">Please don't include TINs, passwords or bank details here. We'll ask for documents once we've spoken.</p>
 
   {!configured && <p><Field v={site.web3formsKey} /></p>}
+
+  <label class="consent">
+    <input type="checkbox" name="privacy_consent" value="Agreed" required />
+    <span>I agree to {site.shortName} using these details to respond to me, including storing them outside Uganda, as explained in the <a href="/privacy/" target="_blank" rel="noopener">Privacy Notice</a>.</span>
+  </label>
 
   <button class="button" type="submit">Send enquiry</button>
   <p class="form-status" role="status" aria-live="polite" hidden></p>

@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "node scripts/list-todos.mjs --check && astro build",
     "preview": "astro preview",
-    "todos": "node scripts/list-todos.mjs"
+    "todos": "node scripts/list-todos.mjs",
+    "preview-file": "npm run build && node scripts/make-preview.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
