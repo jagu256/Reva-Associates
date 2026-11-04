@@ -27,7 +27,7 @@ export const site = {
   experience: '25+ years',
   clients: '100+',
   taxAgent: 'Brijesh Patel',
-  registration: '[TODO: confirm what the registration number is and whether to show it, or remove this row]',
+  taxAgentNumber: 'CR01261983818',
 
   contact: {
     address: 'Plot 03, Wampewo Avenue, Kololo, Kampala, Uganda. P.O. Box 34708',
