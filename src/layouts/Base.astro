@@ -3,10 +3,10 @@ import '@fontsource-variable/source-serif-4/index.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { isTodo, site } from '../data/site';
+import { isTodo, site, whatsappLink } from '../data/site';
 
 const { title, description = site.description, noindex = false } = Astro.props;
-const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | Accounting, Tax & URA Audit Support in Uganda`;
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | Accounting, Tax & URA Audit Support in Kampala, Uganda`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
 const { contact } = site;
@@ -49,5 +49,9 @@ const schema = {
       <slot />
     </main>
     <Footer />
+    <a class="whatsapp-float" href={whatsappLink} aria-label="Message us on WhatsApp">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.8l.4-.5.2-.4v-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.5 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1 .1-1.2-.1-.1-.2-.2-.5-.3Z" /></svg>
+      <span>WhatsApp</span>
+    </a>
   </body>
 </html>

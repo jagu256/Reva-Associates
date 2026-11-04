@@ -18,10 +18,10 @@ export const site = {
   legalUpdated: '4 November 2026',
 
   // Shown as the page description in search results, so it stays plain text.
-  description: 'Accounting, tax and URA audit support for businesses in Uganda.',
+  description: 'Accounting, tax and URA audit support for businesses in Kampala, Uganda.',
 
   summary:
-    'Reva Associates Limited is a Ugandan accounting and tax firm, started in 2022. We help small and medium businesses with their compliance and support them through URA customs and tax audits, objections and disputes.',
+    'Reva Associates Limited is an accounting and tax firm in Kampala, Uganda. We help small and medium businesses with their compliance and support them through URA customs and tax audits, objections and disputes.',
   story:
     'Reva Associates was started in 2022, building on more than 25 years of accounting and tax experience. We have served more than 100 clients, from importers and manufacturers to NGOs, hotels and construction companies.',
   founded: '2022',
@@ -32,6 +32,7 @@ export const site = {
 
   contact: {
     address: 'Plot 03, Wampewo Avenue, Kololo, Kampala, Uganda. P.O. Box 34708',
+    mapQuery: 'Plot 03, Wampewo Avenue, Kololo, Kampala, Uganda',
     phone: '+256 757 868120',
     // Digits only with country code, no + or spaces. Used for the one-tap link.
     whatsapp: '256757868120',
@@ -43,6 +44,10 @@ export const site = {
   // It sits in the page source by design, so it is safe to commit.
   web3formsKey: '[TODO: Web3Forms access key]',
 };
+
+export const whatsappLink = `https://wa.me/${site.contact.whatsapp}?text=${encodeURIComponent(
+  `Hello ${site.shortName}, I'd like to ask about your services.`,
+)}`;
 
 export const nav = [
   { href: '/', label: 'Home' },

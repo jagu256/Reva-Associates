@@ -2,10 +2,10 @@
 import Base from '../layouts/Base.astro';
 import ContactForm from '../components/ContactForm.astro';
 import Field from '../components/Field.astro';
-import { isTodo, site } from '../data/site';
+import { isTodo, site, whatsappLink } from '../data/site';
 
 const { contact } = site;
-const whatsappText = encodeURIComponent(`Hello ${site.shortName}, I'd like to ask about your services.`);
+const mapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.mapQuery)}`;
 ---
 
 <Base title="Contact" description={`Contact ${site.name} for accounting and tax support.`}>
@@ -25,7 +25,10 @@ const whatsappText = encodeURIComponent(`Hello ${site.shortName}, I'd like to as
         <dl class="facts">
           <div>
             <dt>Office</dt>
-            <dd><Field v={contact.address} /></dd>
+            <dd>
+              <Field v={contact.address} />
+              <a class="map-link" href={mapLink} rel="noopener">Open in Google Maps</a>
+            </dd>
           </div>
           <div>
             <dt>Phone</dt>
@@ -44,7 +47,7 @@ const whatsappText = encodeURIComponent(`Hello ${site.shortName}, I'd like to as
         {isTodo(contact.whatsapp) ? (
           <p style="margin-top: 20px"><Field v={contact.whatsapp} /></p>
         ) : (
-          <a class="button" href={`https://wa.me/${contact.whatsapp}?text=${whatsappText}`}>Message us on WhatsApp</a>
+          <a class="button" href={whatsappLink}>Message us on WhatsApp</a>
         )}
       </aside>
     </div>

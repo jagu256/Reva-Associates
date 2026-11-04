@@ -26,6 +26,7 @@ const shell = (html) => html.replace(/href="\/([^"]*)"/g, 'href="#/$1"').replace
 
 const header = shell(between(home, '<header class="site-header">', '</header>'));
 const footer = shell(between(home, '<footer class="site-footer">', '</footer>'));
+const whatsapp = home.slice(home.indexOf('<a class="whatsapp-float"'), home.indexOf('</a>', home.indexOf('<a class="whatsapp-float"')) + 4);
 const sections = pages
   .map((page) => {
     const route = page === 'index' ? '' : `${page}/`;
@@ -77,6 +78,7 @@ writeFileSync(
 <header class="site-header">${header}</header>
 <main id="main">${sections}</main>
 <footer class="site-footer">${footer}</footer>
+${whatsapp}
 <script>${router}</script>
 <script type="module">${formScript}</script>
 </body>
