@@ -33,7 +33,7 @@ export const site = {
     address: 'Plot 03, Wampewo Avenue, Kololo, Kampala, Uganda. P.O. Box 34708',
     phone: '+256 757 868120',
     // Digits only with country code, no + or spaces. Used for the one-tap link.
-    whatsapp: '[TODO: WhatsApp number, digits only with 256 country code]',
+    whatsapp: '256757868120',
     email: 'accounts1@revaassociates.co.ug',
     hours: 'Mon–Fri 8:30am–5:30pm',
   },

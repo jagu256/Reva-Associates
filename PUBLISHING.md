@@ -15,7 +15,7 @@ Dashboard button names change from time to time, so if one doesn't match, look f
 
 ## 1. Connect the contact form
 
-1. Go to [web3forms.com](https://web3forms.com) and enter the email address that should receive enquiries. It should be the firm's, or use yours while testing.
+1. Go to [web3forms.com](https://web3forms.com) and enter `accounts1@revaassociates.co.ug`, where enquiries should go. You'll need access to that inbox to get the key.
 2. Copy the access key they email you.
 3. Paste it into `web3formsKey` in `src/data/site.ts`.
 
