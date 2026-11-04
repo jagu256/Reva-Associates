@@ -23,26 +23,18 @@ The key is meant to be visible in the page source. It can only send mail to that
 
 ## 2. Put the code on GitHub
 
-Create an empty **private** repository called `reva-associates` at [repo.new](https://repo.new). Don't add a README. Then run this in `C:\Reva`, swapping in your username:
-
-```bash
-git init -b main
-```
+Done. The code is at [jagu256/Reva-Associates](https://github.com/jagu256/Reva-Associates), a private repository. To save and upload later changes, run these in `C:Reva`:
 
 ```bash
 git add .
 ```
 
 ```bash
-git commit -m "Initial website"
+git commit -m "Describe your change"
 ```
 
 ```bash
-git remote add origin https://github.com/YOUR-USERNAME/reva-associates.git
-```
-
-```bash
-git push -u origin main
+git push
 ```
 
 `.gitignore` keeps `.docx` files out of the repo, so your dad's filled-in questionnaire won't get uploaded.
@@ -52,6 +44,7 @@ git push -u origin main
 1. Create a free account at [cloudflare.com](https://dash.cloudflare.com/sign-up). Use an email address the firm will keep, because this account will end up controlling the live site.
 2. Go to **Compute > Workers & Pages > Create application** and import your GitHub repository.
 3. Set:
+   - Project name: `reva-associates` (all lowercase, to match `wrangler.jsonc`)
    - Build command: `npm run build`
    - Deploy command: `npx wrangler deploy`
 4. Save and deploy.
