@@ -47,6 +47,19 @@ const thanksUrl = new URL('/thanks/', Astro.site).href;
     <textarea id="message" name="message" rows="6" required></textarea>
   </div>
 
+  <div class="field-row">
+    <div class="field">
+      <label for="preferred_date">Preferred appointment date <span>(optional)</span></label>
+      <input id="preferred_date" name="preferred_date" type="date" />
+    </div>
+    <div class="field">
+      <label for="preferred_time">Preferred time <span>(optional)</span></label>
+      <input id="preferred_time" name="preferred_time" type="time" min="08:30" max="17:30" />
+    </div>
+  </div>
+
+  <p class="form-note">We're open {site.contact.hours}. We'll confirm any appointment by phone or email.</p>
+
   <p class="form-note">Please don't include TINs, passwords or bank details here. We'll ask for documents once we've spoken.</p>
 
   {!configured && <p><Field v={site.web3formsKey} /></p>}

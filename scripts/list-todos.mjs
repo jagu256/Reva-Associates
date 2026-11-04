@@ -21,10 +21,6 @@ if (process.argv.includes('--check')) {
     console.error(`Build stopped: launched is true but ${todos.length} TODOs remain. Run "npm run todos".`);
     process.exit(1);
   }
-  if (launched && config.includes('reva-associates.example')) {
-    console.error('Build stopped: launched is true but url in src/data/site.ts is still the placeholder.');
-    process.exit(1);
-  }
 } else {
   console.log(todos.join('\n') || 'No TODOs left.');
   console.log(`\n${todos.length} TODO(s) remaining.`);

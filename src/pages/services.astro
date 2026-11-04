@@ -1,16 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
-import Field from '../components/Field.astro';
-import { serviceGroups, site } from '../data/site';
+import { isTodo, serviceGroups, site } from '../data/site';
+
+const { email } = site.contact;
 ---
 
-<Base title="Services" description="Tax, accounting, payroll, audit and company services in Uganda.">
+<Base title="Services" description="URA customs and tax audits, tax, accounting, payroll and company services in Uganda.">
   <section class="page-intro">
     <div class="wrap">
       <p class="eyebrow">Services</p>
       <h1>How we can help</h1>
-      <p class="lead">Tax, accounting, audit and company support, in one place.</p>
-      <p style="margin-top: 12px"><Field v="[TODO: confirm which services below the firm offers]" /></p>
+      <p class="lead">URA audits and disputes, tax, accounting and company support, in one place.</p>
     </div>
   </section>
 
@@ -35,10 +35,13 @@ import { serviceGroups, site } from '../data/site';
   <section class="band">
     <div class="wrap band-row">
       <div>
-        <h2>Not sure what you need?</h2>
-        <p><Field v={site.pricing} /></p>
+        <h2>Need a quote?</h2>
+        <p>Tell us what you need and we'll send you a quote.</p>
       </div>
-      <a class="button" href="/contact/">Ask for a quote</a>
+      <div class="button-row">
+        <a class="button" href="/contact/">Request a quote</a>
+        {!isTodo(email) && <a class="button button-outline" href={`mailto:${email}?subject=Quote%20request`}>Email us</a>}
+      </div>
     </div>
   </section>
 </Base>

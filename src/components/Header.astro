@@ -6,7 +6,10 @@ const current = Astro.url.pathname;
 
 <header class="site-header">
   <div class="wrap header-row">
-    <a class="wordmark" href="/">{site.shortName}<span> Ltd</span></a>
+    <a class="wordmark" href="/" aria-label={site.name}>
+      <img src="/logo-mark.png" alt="" width="70" height="48" />
+      <span>{site.shortName}<small>Limited</small></span>
+    </a>
 
     <nav class="nav-desktop" aria-label="Main">
       {nav.map((item) => (

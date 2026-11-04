@@ -1,12 +1,13 @@
 :root {
-  --ink: #13233a;
-  --ink-soft: #3a4859;
-  --muted: #5a6677;
-  --paper: #fbfaf7;
+  --ink: #1d1d20;
+  --ink-soft: #424247;
+  --muted: #5f5f66;
+  --paper: #fcfbfa;
   --surface: #ffffff;
-  --rule: #dfdbd2;
-  --accent: #8a5e1e;
-  --accent-soft: #e3c48f;
+  --rule: #e3dfdc;
+  --accent: #c60d2b;
+  --accent-dark: #9e0a22;
+  --accent-soft: #f6dfe3;
   --todo: #fff0a8;
 
   --serif: 'Source Serif 4 Variable', Georgia, 'Times New Roman', serif;
@@ -139,9 +140,9 @@ mark.todo {
 .button {
   display: inline-block;
   padding: 13px 24px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--accent);
   border-radius: 3px;
-  background: var(--ink);
+  background: var(--accent);
   color: #fff;
   cursor: pointer;
   font: 600 1rem/1.3 var(--sans);
@@ -149,7 +150,8 @@ mark.todo {
 }
 
 .button:hover {
-  background: #1f3757;
+  border-color: var(--accent-dark);
+  background: var(--accent-dark);
 }
 
 .button:disabled {
@@ -158,12 +160,14 @@ mark.todo {
 }
 
 .button-quiet {
+  border-color: var(--ink);
   background: transparent;
   color: var(--ink);
 }
 
 .button-quiet:hover {
-  background: rgb(19 35 58 / 6%);
+  border-color: var(--ink);
+  background: rgb(29 29 32 / 6%);
 }
 
 .button-row {
@@ -188,14 +192,25 @@ mark.todo {
 }
 
 .wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--serif);
-  font-size: 1.3125rem;
+  font-size: 1.1875rem;
   font-weight: 600;
+  line-height: 1.15;
   text-decoration: none;
 }
 
-.wordmark span {
+.wordmark img {
+  width: auto;
+  height: 40px;
+}
+
+.wordmark small {
+  display: block;
   color: var(--muted);
+  font-size: 0.8125rem;
   font-weight: 400;
 }
 
@@ -334,6 +349,38 @@ mark.todo {
   font-size: 0.9375rem;
 }
 
+/* Stats */
+.stats {
+  border-top: 1px solid var(--rule);
+}
+
+.stats-row {
+  display: grid;
+  gap: 20px;
+  margin-block: 0;
+  padding-block: 28px;
+}
+
+.stats-row div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+}
+
+.stats-row dt {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.stats-row dd {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
 /* Page intro */
 .page-intro {
   padding-block: clamp(40px, 6vw, 64px) clamp(32px, 5vw, 48px);
@@ -367,7 +414,7 @@ mark.todo {
   border-top: 1px solid var(--ink);
 }
 
-.tag-list {
+.plain-list {
   display: grid;
   gap: 0;
   margin: 0;
@@ -375,7 +422,7 @@ mark.todo {
   list-style: none;
 }
 
-.tag-list li {
+.plain-list li {
   padding-block: 12px;
   border-bottom: 1px solid var(--rule);
 }
@@ -405,6 +452,10 @@ mark.todo {
 
 .facts dd {
   margin: 0;
+}
+
+.split-even > div + div {
+  margin-top: 40px;
 }
 
 /* Two-column prose + facts */
@@ -460,7 +511,7 @@ mark.todo {
 .person-photo-empty {
   display: grid;
   place-items: center;
-  background: #efece5;
+  background: #f1eeec;
   color: var(--muted);
   font-size: 0.9375rem;
 }
@@ -516,7 +567,7 @@ mark.todo {
   width: 100%;
   min-width: 0;
   padding: 11px 12px;
-  border: 1px solid #8d97a5;
+  border: 1px solid #94949c;
   border-radius: 3px;
   background: var(--surface);
   color: var(--ink);
@@ -571,7 +622,7 @@ mark.todo {
 
 .band p {
   margin-top: 8px;
-  color: #c9d1dc;
+  color: #d3d3d8;
 }
 
 .band .button {
@@ -585,11 +636,21 @@ mark.todo {
   border-color: var(--accent-soft);
 }
 
+.band .button-outline {
+  background: transparent;
+  color: #fff;
+}
+
+.band .button-outline:hover {
+  background: rgb(255 255 255 / 12%);
+  border-color: #fff;
+}
+
 /* Footer */
 .site-footer {
   padding-top: 48px;
-  background: #0e1a2b;
-  color: #c9d1dc;
+  background: #151517;
+  color: #d3d3d8;
   font-size: 0.9625rem;
 }
 
@@ -628,7 +689,7 @@ mark.todo {
 .footer-base {
   margin-top: 32px;
   padding-block: 16px;
-  border-top: 1px solid #2b3a50;
+  border-top: 1px solid #333338;
   font-size: 0.875rem;
 }
 
@@ -657,9 +718,22 @@ mark.todo {
     column-gap: 40px;
   }
 
-  .tag-list {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 40px;
+  .stats-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .team-solo {
+    display: block;
+  }
+
+  .team-solo .person {
+    display: grid;
+    grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .team-solo .person h2 {
+    margin-top: 0;
   }
 
   .footer-grid {
@@ -690,6 +764,16 @@ mark.todo {
   .contact-grid {
     grid-template-columns: 1.4fr 1fr;
     gap: 72px;
+  }
+
+  .split-even {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  .split-even > div + div {
+    margin-top: 0;
   }
 }
 

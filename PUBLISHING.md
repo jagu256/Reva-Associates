@@ -1,6 +1,6 @@
 # Publishing the Reva Associates website
 
-Do these in order. You can do steps 1–3 now and have a private test link to show your dad. Steps 4–6 need his answers and a domain.
+Do these in order. You can do steps 1–3 now and have a private test link to show your dad. Steps 4–6 need control of the domain and the remaining details.
 
 Dashboard button names change from time to time, so if one doesn't match, look for the closest label.
 
@@ -11,7 +11,7 @@ Dashboard button names change from time to time, so if one doesn't match, look f
 | Hosting (Cloudflare Workers) | Free | Static pages aren't charged for bandwidth |
 | HTTPS certificate | Free | Automatic |
 | Contact form (Web3Forms) | Free | Reported at about 250 enquiries a month; I couldn't open their pricing page to confirm |
-| `.co.ug` domain | $25/year at [registry.co.ug](https://www.registry.co.ug/) | Resellers charge up to about $190, so compare first |
+| `.co.ug` domain | Already registered, renews May 2027 | The registry lists $25/year; resellers can charge more |
 
 ## 1. Connect the contact form
 
@@ -53,14 +53,13 @@ git push
 
 You'll get a link like `reva-associates.<your-subdomain>.workers.dev`. Search engines are told not to index the site yet, so it's safe to share with your dad for review. Every `git push` to `main` now redeploys the site automatically.
 
-## 4. Buy the domain
+## 4. Get control of the domain
 
-**I recommend `.co.ug`**, for example `revaassociates.co.ug`. It signals a Ugandan business, and that matters more for a local firm than a `.com` would. Buying the `.com` as well is optional and only protects the name.
+The firm already uses `revaassociates.co.ug`, but the registry lists Mai Hosting as its owner and contact (checked 4 November 2026). It expires on 15 May 2027.
 
-1. **Ask your dad first** whether the firm already owns a domain or business email (question 28). If it does, you need the login, not a new domain.
-2. Search for the name at [registry.co.ug](https://www.registry.co.ug/) and compare with a local registrar.
-3. **Register it in the firm's name**, with a firm email address, not your personal details. Whoever is listed legally controls the domain.
-4. Turn on auto-renew or set a calendar reminder. A lapsed domain takes the site and any email on it offline.
+1. Ask for the registrant and contacts to be changed to Reva Associates Ltd.
+2. Get the control panel login, or the authorisation code to transfer it to another registrar.
+3. Find out whether anyone uses an `@revaassociates.co.ug` email address, and keep it running during the move.
 
 ## 5. Connect the domain and HTTPS
 
@@ -79,9 +78,9 @@ HTTPS needs no other setup, because Cloudflare issues and renews the certificate
 ## 6. Launch
 
 1. Fill in the details in `src/data/site.ts` and run `npm run todos` until none are left.
-2. Replace the draft wording, including the home page headline, and have your dad approve all of it.
-3. In `src/data/site.ts`, set `url` to the real address and `launched` to `true`.
-4. Run `npm run build`. It stops with an error if any TODO or the placeholder URL is left.
+2. Have your dad approve all the wording, including the home page headline and service descriptions.
+3. In `src/data/site.ts`, set `launched` to `true`. If you use the `www` address, update `url` too.
+4. Run `npm run build`. It stops with an error if any TODO is left.
 5. Commit and push:
 
 ```bash
@@ -101,7 +100,8 @@ git push
 
 ### Before launch, your dad should check
 
-- **Professional rules:** that the wording and any listed credentials fit ICPAU's rules on promoting a practice.
+- **Accuracy:** that every claim on the site is correct, including the tax agent status, client numbers and years of experience.
+- **Client names:** that each named client is happy to be listed.
 - **Data protection:** the form collects personal details, so check what Uganda's Data Protection and Privacy Act 2019 requires, such as registering with the Personal Data Protection Office and adding a short privacy notice. I haven't added a privacy page.
 
 ### After launch

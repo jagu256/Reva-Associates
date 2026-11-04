@@ -6,7 +6,7 @@ import Footer from '../components/Footer.astro';
 import { isTodo, site } from '../data/site';
 
 const { title, description = site.description, noindex = false } = Astro.props;
-const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | Accounting, Tax & Audit in Uganda`;
+const fullTitle = title ? `${title} | ${site.name}` : `${site.name} | Accounting, Tax & URA Audit Support in Uganda`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 
 const { contact } = site;
@@ -30,13 +30,15 @@ const schema = {
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta name="theme-color" content="#13233a" />
+    <meta property="og:image" content={new URL('/og-image.jpg', Astro.site).href} />
+    <meta name="theme-color" content="#1d1d20" />
     {(!site.launched || noindex) && <meta name="robots" content="noindex" />}
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </head>

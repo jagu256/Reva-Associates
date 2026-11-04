@@ -9,24 +9,25 @@ export const site = {
   // the build refuses to run with this true while any TODO remains.
   launched: false,
 
-  // The live address, no trailing slash. Update this when the domain is connected.
-  url: 'https://reva-associates.example',
+  // The live address, no trailing slash.
+  url: 'https://revaassociates.co.ug',
 
-  name: 'Reva Associates Ltd',
+  name: 'Reva Associates Limited',
   shortName: 'Reva Associates',
+  slogan: 'The Accounting Solutions',
 
   // Shown as the page description in search results, so it stays plain text.
-  description: 'Accounting, tax and audit support for individuals and businesses in Uganda.',
+  description: 'Accounting, tax and URA audit support for businesses in Uganda.',
 
-  summary: '[TODO: one or two sentences describing the firm to a new client]',
-  founded: '[TODO: year started]',
-  icpau: '[TODO: ICPAU registration or practising certificate number]',
-  staff: '[TODO: number of staff, or remove]',
-  experience: '[TODO: years of team experience]',
-  clients: '[TODO: approximate clients served]',
-  memberships: '[TODO: memberships and certifications, e.g. ICPAU, ACCA]',
-  story: '[TODO: two or three sentences on how the firm started and who it serves]',
-  pricing: '[TODO: show "starting from" fees, or keep "contact us for a quote"]',
+  summary:
+    'Reva Associates Limited is a Ugandan accounting and tax firm, started in 2022. We help small and medium businesses stay compliant and resolve URA customs and tax audits, objections and disputes.',
+  story:
+    'Reva Associates was started in 2022, building on more than 25 years of accounting and tax experience. We have served more than 100 clients, from importers and manufacturers to NGOs, hotels and construction companies.',
+  founded: '2022',
+  experience: '25+ years',
+  clients: '100+',
+  taxAgent: 'Brijesh Patel',
+  registration: '[TODO: confirm what the registration number is and whether to show it, or remove this row]',
 
   contact: {
     address: '[TODO: building, floor or plot, street, area, city]',
@@ -34,9 +35,7 @@ export const site = {
     // Digits only with country code, no + or spaces. Used for the one-tap link.
     whatsapp: '[TODO: WhatsApp number, digits only with 256 country code]',
     email: '[TODO: enquiries email address]',
-    hours: '[TODO: office hours]',
-    facebook: '',
-    linkedin: '',
+    hours: 'Mon–Fri 8:30am–5:30pm',
   },
 
   // Free key from web3forms.com, sent to the enquiries inbox.
@@ -52,54 +51,68 @@ export const nav = [
   { href: '/contact/', label: 'Contact' },
 ];
 
-// Shown first, on the home page. Replace with the firm's real top priorities.
+// Shown first, on the home page, in the firm's order of priority.
 export const featuredServices = [
-  'Tax returns & compliance',
+  'URA customs audits',
+  'URA audits, objections & disputes',
+  'Financial statements preparation',
+  'Internal audits',
   'Bookkeeping & accounting',
-  'Statutory audits',
-  'Business advisory',
+  'Management report preparation',
 ];
 
 export const clientTypes = [
-  '[TODO: client type 1, e.g. small businesses]',
-  '[TODO: client type 2, e.g. NGOs]',
-  '[TODO: client type 3, e.g. schools]',
-  '[TODO: client type 4, e.g. individuals]',
+  'Small and medium companies',
+  'Import and trading businesses',
+  'Manufacturing companies',
+  'NGOs',
+  'Service industries',
+  'Hotels and restaurants',
+  'Agriculture businesses',
+  'Construction companies',
+];
+
+export const clients = [
+  'Kooke Enterprises Ltd',
+  'Autozone Professional Ltd',
+  'Selective Services Ltd',
+  'Jati Umra Construction Ltd',
+  'Union Logistics Ltd',
 ];
 
 export const strengths = [
-  { title: '[TODO: strength 1]', text: '[TODO: one line on what sets the firm apart]' },
-  { title: '[TODO: strength 2]', text: '[TODO: one line on what sets the firm apart]' },
-  { title: '[TODO: strength 3]', text: '[TODO: one line on what sets the firm apart]' },
+  { title: 'Over 25 years of experience', text: 'Decades of hands-on accounting and tax work behind every engagement.' },
+  { title: 'URA customs and tax focus', text: 'Customs audits, tax audits, objections and disputes are at the centre of what we do.' },
+  { title: 'URA-registered tax agent', text: 'Brijesh Patel is a URA-registered tax agent.' },
 ];
 
-// Drafted from the questionnaire's list. Delete anything the firm does not offer.
 export const serviceGroups = [
+  {
+    title: 'URA audits & disputes',
+    items: [
+      { name: 'URA customs audits, objections & disputes', text: 'Support through customs audits, assessments, objections and disputes.' },
+      { name: 'URA audits, objections & disputes', text: 'Support through URA tax audits, assessments and objections.' },
+    ],
+  },
   {
     title: 'Tax',
     items: [
       { name: 'Individual income tax returns', text: 'Preparing and filing personal returns with URA.' },
       { name: 'Company tax returns & compliance', text: 'Corporate returns, provisional tax and keeping filings on schedule.' },
-      { name: 'VAT registration & returns', text: 'Registering for VAT and filing accurate monthly returns.' },
+      { name: 'VAT registration & returns', text: 'Registering for VAT and filing accurate returns.' },
       { name: 'EFRIS setup & support', text: 'Getting set up on EFRIS and keeping invoicing running smoothly.' },
       { name: 'Tax advisory & planning', text: 'Structuring decisions so tax is planned for, not a surprise.' },
-      { name: 'URA audits, objections & disputes', text: 'Support through URA audits, assessments and objections.' },
     ],
   },
   {
     title: 'Accounting & payroll',
     items: [
       { name: 'Bookkeeping & accounting', text: 'Keeping your records accurate and up to date.' },
-      { name: 'Financial statements preparation', text: 'Clear annual and management accounts.' },
-      { name: 'PAYE & payroll', text: 'Running payroll and filing PAYE returns.' },
-      { name: 'NSSF & Local Service Tax', text: 'Monthly NSSF schedules and Local Service Tax compliance.' },
-    ],
-  },
-  {
-    title: 'Audit',
-    items: [
-      { name: 'Statutory audits', text: 'Independent audits of financial statements.' },
+      { name: 'Financial statements preparation', text: 'Clear, well-prepared annual accounts.' },
+      { name: 'Management report preparation', text: 'Regular reports that show how the business is doing.' },
       { name: 'Internal audits', text: 'Reviewing controls and processes to reduce risk.' },
+      { name: 'PAYE & payroll', text: 'Running payroll and filing PAYE returns.' },
+      { name: 'NSSF & Local Service Tax', text: 'NSSF schedules and Local Service Tax compliance.' },
     ],
   },
   {
@@ -114,7 +127,11 @@ export const serviceGroups = [
 
 // Add a photo by putting the file in public/team/ and setting photo: '/team/name.jpg'.
 export const team = [
-  { name: '[TODO: full name]', title: '[TODO: job title]', quals: '[TODO: qualifications, e.g. CPA]', bio: '[TODO: two or three line bio]', photo: '' },
-  { name: '[TODO: full name]', title: '[TODO: job title]', quals: '[TODO: qualifications, e.g. CPA]', bio: '[TODO: two or three line bio]', photo: '' },
-  { name: '[TODO: full name]', title: '[TODO: job title]', quals: '[TODO: qualifications, e.g. CPA]', bio: '[TODO: two or three line bio]', photo: '' },
+  {
+    name: 'Brijesh Patel',
+    title: '[TODO: job title]',
+    quals: 'URA-registered tax agent',
+    bio: '[TODO: two or three line bio from the CV]',
+    photo: '',
+  },
 ];
